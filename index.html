@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="book_app" ng-init="person = {fName: 'Joey', lName:}">
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Books I've Read</title>
+  </head>
+
+  <body>
+    <div class="col-md-offset-4 col-md-12" ng-controller="ctrl1">
+      <span> Values: </span>
+      <input type="text" ng-model="book_title">
+      <input type="text" ng-model="book_author">
+      <input type="text" ng-model="book_link">
+      <button ng-click="updateValue()">Sum</button>
+      <br>
+      <br>
+      {{calculation}}
+      <p>your first value: {{first}}</p>
+      <p>your second value: {{second}}</p>
+      <p>After summing both these numbers together, we get {{calculation}}</p>
+    </div>
+    <script src="js/angular.min.js"></script>
+    <script src="js/myscript.js"></script>
+  </body>
+
+</html>
