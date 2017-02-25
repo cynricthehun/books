@@ -1,9 +1,13 @@
 var book_app = angular.module('book_app', []);
 
-book_app.controller('ctrl1', function($scope) {
-  $scope.first = 1;
-  $scope.second = 1;
-  $scope.updateValue = function() {
-    $scope.calculation = $scope.first + ' + ' + $scope.second + " = " + (+$scope.first + +$scope.second);
-  };
+book_app.controller('bookHandler', function($scope) {
+  $scope.bookName = "Default Book";
+  $scope.bookImage = "image";
+  $scope.bookLink = "www.google.com";
+
+  $scope.bookList = [];
+
+  $scope.addText = function() {
+    $scope.arrayText.push(this.myText);
+}
 });

@@ -2,25 +2,33 @@
 <html ng-app="book_app" ng-init="person = {fName: 'Joey', lName:}">
   <head>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/myscript.js"></script>
     <title>Books I've Read</title>
   </head>
 
-  <body>
-    <div class="col-md-offset-4 col-md-12" ng-controller="ctrl1">
-      <span> Values: </span>
-      <input type="text" ng-model="book_title">
-      <input type="text" ng-model="book_author">
-      <input type="text" ng-model="book_link">
-      <button ng-click="updateValue()">Sum</button>
-      <br>
-      <br>
-      {{calculation}}
-      <p>your first value: {{first}}</p>
-      <p>your second value: {{second}}</p>
-      <p>After summing both these numbers together, we get {{calculation}}</p>
-    </div>
-    <script src="js/angular.min.js"></script>
-    <script src="js/myscript.js"></script>
+  <body class="container">
+    <br><br><br>
+    <form class="col-md-12" ng-controller="bookHandler" ng-submit="addText()">
+      <div class="form-group">
+        <label for="bookName">Name</label>
+        <input ng-model="addBook" type="text" class="form-control"
+        id="bookName" placeholder="Wizard of Oz">
+      </div>
+      <div class="form-group">
+        <label for="bookImage">Image</label>
+        <input ng-model="addBookImage" type="text" class="form-control"
+        id="bookName" placeholder="monkeys.png">
+      </div>
+      <div class="form-group">
+        <label for="bookLink">Hyperlink</label>
+        <input ng-model="addBookLink" type="text" class="form-control"
+        id="bookName" placeholder="www.google.com/monkeys">
+      </div>
+      <input type="submit" id="submit"/>
+      <br><br>
+      <pre>list={{arrayText}}</pre>
+    </form>
   </body>
 
 </html>
